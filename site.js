@@ -143,6 +143,7 @@ const MIRKO_COPY = {
 };
 
 const MIRKO_TRANSLATION_ROWS = [
+  
 
   // Shared measurements and labels
   { ru: "Основные показатели", uz: "Asosiy ko‘rsatkichlar", en: "Key figures" },
