@@ -2660,3 +2660,489 @@ bottom: 120px;
     grid-template-columns: 1fr !important;
   }
 }
+/* =========================================================
+   CERTIFICATES GRID
+   ========================================================= */
+
+.certificates-grid {
+  position: relative;
+  z-index: 1;
+
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+
+  gap: 20px;
+}
+
+
+/* Каждая карточка */
+
+.certificates-grid .certificate-card {
+  display: grid;
+  grid-template-columns: 1fr;
+
+  min-width: 0;
+
+  background: var(--white);
+
+  border: 1px solid rgba(11, 23, 17, .10);
+
+  border-radius: 28px;
+
+  overflow: hidden;
+
+  box-shadow:
+    0 25px 70px rgba(11, 23, 17, .08);
+}
+
+
+/* Превью */
+
+.certificates-grid .certificate-preview {
+  min-height: 560px;
+
+  padding: 45px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background:
+    radial-gradient(
+      circle at 50% 45%,
+      rgba(180, 232, 95, .12),
+      transparent 45%
+    ),
+    #eef0e9;
+}
+
+
+/* Картинка сертификата */
+
+.certificates-grid .certificate-preview img {
+  display: block;
+
+  width: 100%;
+  max-width: 430px;
+  height: auto;
+
+  object-fit: contain;
+
+  background: #fff;
+
+  box-shadow:
+    0 25px 60px rgba(11, 23, 17, .15);
+
+  transition:
+    transform .45s ease,
+    box-shadow .45s ease;
+}
+
+
+/* Hover */
+
+.certificates-grid .certificate-preview a:hover img {
+  transform: translateY(-8px);
+
+  box-shadow:
+    0 35px 80px rgba(11, 23, 17, .20);
+}
+
+
+/* Информация */
+
+.certificates-grid .certificate-info {
+  min-height: 430px;
+
+  padding: 50px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+
+  background: var(--forest);
+
+  color: #fff;
+}
+
+
+/* Тип */
+
+.certificates-grid .certificate-type {
+  margin-bottom: 20px;
+
+  color: var(--lime);
+
+  font-size: 9px;
+  font-weight: 800;
+
+  letter-spacing: .16em;
+
+  text-transform: uppercase;
+}
+
+
+/* Название */
+
+.certificates-grid .certificate-info h3 {
+  margin: 0 0 35px;
+
+  font-family: var(--display);
+
+  font-size: clamp(48px, 5vw, 78px);
+
+  font-weight: 850;
+
+  line-height: .85;
+
+  letter-spacing: -.06em;
+}
+
+
+/* Таблица */
+
+.certificates-grid .certificate-info dl {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+
+  margin: 0 0 30px;
+
+  border-top: 1px solid rgba(255,255,255,.14);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+
+
+.certificates-grid .certificate-info dl > div {
+  padding: 20px 15px 20px 0;
+
+  border-bottom: 1px solid rgba(255,255,255,.12);
+}
+
+
+.certificates-grid .certificate-info dl > div:nth-child(odd) {
+  margin-right: 15px;
+
+  border-right: 1px solid rgba(255,255,255,.12);
+}
+
+
+.certificates-grid .certificate-info dl > div:nth-last-child(-n+2) {
+  border-bottom: 0;
+}
+
+
+/* Заголовки */
+
+.certificates-grid .certificate-info dt {
+  margin-bottom: 8px;
+
+  color: rgba(255,255,255,.42);
+
+  font-size: 8px;
+  font-weight: 800;
+
+  letter-spacing: .13em;
+
+  text-transform: uppercase;
+}
+
+
+/* Значения */
+
+.certificates-grid .certificate-info dd {
+  margin: 0;
+
+  color: #fff;
+
+  font-size: 13px;
+
+  line-height: 1.4;
+}
+
+
+/* Описание */
+
+.certificates-grid .certificate-info > p {
+  max-width: 480px;
+
+  margin: 0 0 30px;
+
+  color: rgba(255,255,255,.58);
+
+  font-size: 13px;
+
+  line-height: 1.6;
+}
+
+
+/* Кнопка */
+
+.certificates-grid .certificate-info .button {
+  align-self: flex-start;
+}
+
+
+/* =========================================================
+   MOBILE
+   ========================================================= */
+
+@media (max-width: 1050px) {
+
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+}
+
+
+@media (max-width: 640px) {
+
+  .certificates-grid {
+    gap: 16px;
+  }
+
+
+  .certificates-grid .certificate-preview {
+    min-height: 480px;
+
+    padding: 30px 20px;
+  }
+
+
+  .certificates-grid .certificate-info {
+    min-height: auto;
+
+    padding: 35px 25px 40px;
+  }
+
+
+  .certificates-grid .certificate-info h3 {
+    font-size: 52px;
+
+    margin-bottom: 28px;
+  }
+
+
+  .certificates-grid .certificate-info dl {
+    grid-template-columns: 1fr;
+  }
+
+
+  .certificates-grid .certificate-info dl > div,
+  .certificates-grid .certificate-info dl > div:nth-child(odd) {
+    margin-right: 0;
+
+    border-right: 0;
+
+    border-bottom: 1px solid rgba(255,255,255,.12);
+  }
+
+
+  .certificates-grid .certificate-info dl > div:last-child {
+    border-bottom: 0;
+  }
+
+
+  .certificates-grid .certificate-info .button {
+    width: 100%;
+
+    justify-content: space-between;
+  }
+
+}
+:root {
+  --font-main: 'Inter', system-ui, -apple-system, sans-serif;
+  --bg-primary: #121814;      /* Тёмный премиальный фон (или смените на #ffffff) */
+  --bg-card: #1c241e;         /* Фон карточек */
+  --accent: #34d399;          /* Изумрудный акцент */
+  --text-main: #f3f4f6;       /* Основной текст */
+  --text-muted: #9ca3af;      /* Второстепенный текст */
+  --border-color: #2d372e;    /* Границы */
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* Контейнер секции */
+.certificates-section {
+  background-color: var(--bg-primary);
+  color: var(--text-main);
+  font-family: var(--font-main);
+  padding: 80px 24px;
+  max-width: 1280px;
+  margin: 0 auto;
+}
+
+/* Заголовок секции */
+.section-heading {
+  margin-bottom: 56px;
+  max-width: 720px;
+}
+
+.section-heading .eyebrow {
+  display: inline-block;
+  font-size: 0.875rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  margin-bottom: 12px;
+}
+
+.section-heading h2 {
+  font-size: 2.75rem;
+  font-weight: 800;
+  line-height: 1.15;
+  letter-spacing: -0.02em;
+  margin-bottom: 20px;
+}
+
+.section-heading h2 em {
+  font-style: normal;
+  color: var(--accent);
+}
+
+.section-heading p {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: var(--text-muted);
+}
+
+/* Сетка карточек */
+.certificates-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+  gap: 32px;
+}
+
+/* Карточка сертификата */
+.certificate-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  border-radius: 16px;
+  padding: 24px;
+  display: grid;
+  grid-template-columns: 200px 1fr;
+  gap: 24px;
+  transition: var(--transition);
+}
+
+.certificate-card:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+  box-shadow: 0 20px 40px -15px rgba(0, 0, 0, 0.5);
+}
+
+/* Превью скана */
+.certificate-preview a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  aspect-ratio: 3 / 4;
+  overflow: hidden;
+  border-radius: 8px;
+  background-color: #000;
+}
+
+.certificate-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.certificate-card:hover .certificate-preview img {
+  transform: scale(1.05);
+}
+
+/* Информация о сертификате */
+.certificate-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.certificate-type {
+  font-size: 0.75rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: var(--accent);
+  margin-bottom: 6px;
+}
+
+.certificate-info h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: 16px;
+}
+
+/* Таблица с характеристиками (dl, dt, dd) */
+.certificate-info dl {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.certificate-info dt {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  text-transform: uppercase;
+}
+
+.certificate-info dd {
+  font-size: 0.875rem;
+  font-weight: 600;
+  margin-top: 2px;
+}
+
+.certificate-info p {
+  font-size: 0.875rem;
+  line-height: 1.5;
+  color: var(--text-muted);
+  margin-bottom: 24px;
+}
+
+/* Кнопка */
+.button.button-light {
+  margin-top: auto;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 20px;
+  background-color: rgba(255, 255, 255, 0.05);
+  color: var(--text-main);
+  border: 1px solid var(--border-color);
+  border-radius: 8px;
+  text-decoration: none;
+  font-size: 0.875rem;
+  font-weight: 600;
+  transition: var(--transition);
+}
+
+.button.button-light:hover {
+  background-color: var(--accent);
+  color: #000;
+  border-color: var(--accent);
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 640px) {
+  .certificates-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-card {
+    grid-template-columns: 1fr;
+  }
+
+  .certificate-preview {
+    max-width: 220px;
+    margin: 0 auto;
+  }
+
+  .section-heading h2 {
+    font-size: 2rem;
+  }
+}
