@@ -3868,3 +3868,249 @@ bottom: 120px;
     transition: none !important;
   }
 }
+/* =========================================================
+   FOUNDER SECTION
+   ========================================================= */
+
+.founder-section {
+  position: relative;
+  padding: 140px 6vw;
+  background: #f3f1eb;
+  color: #111;
+  overflow: hidden;
+}
+
+.founder-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 80px;
+}
+
+.founder-top > div {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+}
+
+.founder-index,
+.founder-year {
+  font-size: 11px;
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: minmax(300px, .9fr) minmax(420px, 1.1fr);
+  gap: clamp(50px, 8vw, 140px);
+  align-items: start;
+}
+
+/* PHOTO */
+
+.founder-photo {
+  position: relative;
+}
+
+.founder-photo-placeholder {
+  aspect-ratio: 4 / 5;
+  min-height: 620px;
+  background:
+    linear-gradient(135deg, #d9d6ce 0%, #c6c3ba 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 32px;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-photo-placeholder::before {
+  content: "";
+  position: absolute;
+  width: 70%;
+  height: 70%;
+  right: -18%;
+  top: -12%;
+  border: 1px solid rgba(13, 38, 27, .16);
+  transform: rotate(45deg);
+}
+
+.founder-photo-placeholder::after {
+  content: "M";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -55%);
+  font-size: clamp(150px, 18vw, 280px);
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(13, 38, 27, .07);
+}
+
+.founder-photo-placeholder span,
+.founder-photo-placeholder small {
+  position: relative;
+  z-index: 2;
+}
+
+.founder-photo-placeholder span {
+  font-size: 12px;
+  letter-spacing: .2em;
+  font-weight: 600;
+}
+
+.founder-photo-placeholder small {
+  margin-top: 8px;
+  font-size: 9px;
+  letter-spacing: .16em;
+  opacity: .5;
+}
+
+/* CONTENT */
+
+.founder-content {
+  padding-top: 10px;
+  max-width: 720px;
+}
+
+.founder-label {
+  display: block;
+  margin-bottom: 28px;
+  font-size: 11px;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  opacity: .55;
+}
+
+.founder-content h2 {
+  margin: 0;
+  font-size: clamp(52px, 6.5vw, 100px);
+  line-height: .91;
+  letter-spacing: -.055em;
+  font-weight: 500;
+}
+
+.founder-content h2 em {
+  font-style: normal;
+  color: #0d261b;
+}
+
+.founder-lead {
+  max-width: 580px;
+  margin: 42px 0 34px;
+  font-size: clamp(21px, 2vw, 30px);
+  line-height: 1.3;
+  letter-spacing: -.02em;
+}
+
+.founder-line {
+  width: 100%;
+  height: 1px;
+  background: rgba(17, 17, 17, .15);
+  margin-bottom: 34px;
+}
+
+.founder-content > p:not(.founder-lead) {
+  max-width: 650px;
+  margin: 0 0 22px;
+  font-size: 16px;
+  line-height: 1.7;
+  color: rgba(17, 17, 17, .72);
+}
+
+/* QUOTE */
+
+.founder-quote {
+  margin-top: 65px;
+  padding-top: 28px;
+  border-top: 1px solid rgba(17, 17, 17, .15);
+  position: relative;
+}
+
+.founder-quote > span {
+  display: block;
+  font-family: Georgia, serif;
+  font-size: 70px;
+  line-height: .5;
+  color: #0d261b;
+}
+
+.founder-quote blockquote {
+  max-width: 620px;
+  margin: 25px 0 0;
+  font-size: clamp(25px, 2.5vw, 40px);
+  line-height: 1.15;
+  letter-spacing: -.035em;
+}
+
+/* MOBILE */
+
+@media (max-width: 900px) {
+
+  .founder-section {
+    padding: 90px 6vw;
+  }
+
+  .founder-top {
+    margin-bottom: 55px;
+  }
+
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 55px;
+  }
+
+  .founder-photo-placeholder {
+    min-height: auto;
+  }
+
+  .founder-content h2 {
+    font-size: clamp(48px, 13vw, 78px);
+  }
+
+}
+
+@media (max-width: 600px) {
+
+  .founder-section {
+    padding: 75px 5vw;
+  }
+
+  .founder-top {
+    margin-bottom: 40px;
+  }
+
+  .founder-year {
+    display: none;
+  }
+
+  .founder-photo-placeholder {
+    aspect-ratio: 4 / 5;
+    padding: 22px;
+  }
+
+  .founder-content h2 {
+    font-size: 16vw;
+  }
+
+  .founder-lead {
+    margin-top: 32px;
+    font-size: 21px;
+  }
+
+  .founder-content > p:not(.founder-lead) {
+    font-size: 15px;
+    line-height: 1.65;
+  }
+
+  .founder-quote {
+    margin-top: 45px;
+  }
+
+  .founder-quote blockquote {
+    font-size: 27px;
+  }
+}
